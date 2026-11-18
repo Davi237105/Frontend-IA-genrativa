@@ -1,0 +1,315 @@
+
+
+
+
+/* CONFIGURAÇÕES GERAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background:
+        radial-gradient(circle at 15% 20%, #15243B 0%, transparent 35%),
+        radial-gradient(circle at 85% 80%, #17202F 0%, transparent 35%),
+        #080B12;
+
+    color: #FFFFFF;
+    font-family: Arial, sans-serif;
+    isolation: isolate;
+    overflow-x: hidden;
+}
+
+/* SÍMBOLOS DECORATIVOS DO FUNDO */
+body::before {
+    content:
+        "✦       ⟡          ↗\A"
+        "     ⟲         ✧        ◇\A"
+        "  ⋆         ↗          ✦\A"
+        "       ◇        ⟲        ✧";
+
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    color: rgba(112, 169, 255, 0.17);
+    font-size: clamp(30px, 5vw, 55px);
+    line-height: 2.5;
+    letter-spacing: 10px;
+    text-align: center;
+    white-space: pre-wrap;
+}
+
+/* CONTEÚDO PRINCIPAL */
+.container {
+    position: relative;
+    z-index: 1;
+
+    width: 90%;
+    max-width: 900px;
+    min-height: 100vh;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* TELAS */
+section {
+    width: 100%;
+    padding: 40px;
+
+    background: rgba(19, 24, 34, 0.96);
+    border: 1px solid #37465D;
+    border-radius: 15px;
+
+    text-align: center;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
+}
+
+section[hidden] {
+    display: none;
+}
+
+/* TRANSIÇÕES */
+section:not([hidden]) {
+    animation: aparecer 0.5s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* TEXTOS */
+.subtitulo {
+    color: #83B5FF;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: 65px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #83B5FF;
+    font-size: 25px;
+    margin: 30px 0 12px;
+}
+
+h3 {
+    color: #DCE8F8;
+    font-size: 19px;
+    margin: 25px 0 12px;
+}
+
+p {
+    color: #E0E5EF;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* BOTÕES PRINCIPAIS */
+button {
+    background-color: #246BCE;
+    color: #FFFFFF;
+    border: 1px solid transparent;
+    border-radius: 8px;
+
+    padding: 15px 30px;
+    margin-top: 25px;
+
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+button:hover {
+    background-color: #4389F5;
+    transform: translateY(-3px);
+}
+
+button:focus-visible {
+    outline: 3px solid #FFFFFF;
+    outline-offset: 3px;
+}
+
+/* ALTERNATIVAS */
+#alternativas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 20px;
+}
+
+#alternativas button {
+    width: 100%;
+    min-height: 98px;
+
+    padding: 14px;
+    margin: 0;
+
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* CORES DAS ALTERNATIVAS */
+#alternativas button:nth-child(1) {
+    background-color: #246BCE;
+}
+
+#alternativas button:nth-child(2) {
+    background-color: #46566E;
+}
+
+#alternativas button:nth-child(3) {
+    background-color: #286F99;
+}
+
+#alternativas button:nth-child(4) {
+    background-color: #343C4B;
+}
+
+/* INTERAÇÃO DAS ALTERNATIVAS */
+#alternativas button:hover:not(:disabled) {
+    filter: brightness(1.25);
+    transform: translateY(-3px);
+}
+
+/* ALTERNATIVAS RESPONDIDAS */
+#alternativas button:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* FEEDBACK */
+#feedback {
+    margin-top: 25px;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+/* PROGRESSO */
+#progresso {
+    color: #AFCFFF;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* CRONÔMETRO */
+#temporizador {
+    display: inline-block;
+    background-color: #343C4B;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* TELAS MENORES */
+@media (max-width: 600px) {
+    section {
+        padding: 25px 18px;
+    }
+
+    h1 {
+        font-size: 42px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+
+    #alternativas {
+        gap: 9px;
+    }
+
+    #alternativas button {
+        min-height: 88px;
+        padding: 10px;
+        font-size: 12px;
+    }
+}
+
+
+/* SETAS EM PERSPECTIVA */
+.container::before,
+.container::after {
+    content: "";
+    position: fixed;
+    top: 50%;
+    width: 82px;
+    height: 55vh;
+    max-height: 560px;
+    min-height: 300px;
+
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 0;
+
+    background-size: 82px 96px, 100% 100%;
+    background-repeat: repeat-y, no-repeat;
+
+    filter: drop-shadow(0 0 7px #4389F5);
+    animation: fluxoSetas 7s linear infinite;
+}
+
+/* SETAS ESQUERDAS: APONTAM PARA O CENTRO */
+.container::before {
+    left: clamp(15px, 5vw, 75px);
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='82' height='96' viewBox='0 0 82 96'%3E%3Cg fill='none' stroke='%238FC5FF' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 14 L27 26 L15 38 M32 14 L44 26 L32 38 M49 14 L61 26 L49 38 M15 58 L27 70 L15 82 M32 58 L44 70 L32 82 M49 58 L61 70 L49 82'/%3E%3C/g%3E%3Cpath d='M32 14 L44 26 L32 38' fill='none' stroke='%23FFFFFF' stroke-width='3.5'/%3E%3C/svg%3E"),
+        linear-gradient(90deg, transparent, rgba(67,137,245,.12), transparent);
+}
+
+/* SETAS DIREITAS: APONTAM PARA O CENTRO */
+.container::after {
+    right: clamp(15px, 5vw, 75px);
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='82' height='96' viewBox='0 0 82 96'%3E%3Cg fill='none' stroke='%238FC5FF' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M67 14 L55 26 L67 38 M50 14 L38 26 L50 38 M33 14 L21 26 L33 38 M67 58 L55 70 L67 82 M50 58 L38 70 L50 82 M33 58 L21 70 L33 82'/%3E%3C/g%3E%3Cpath d='M50 14 L38 26 L50 38' fill='none' stroke='%23FFFFFF' stroke-width='3.5'/%3E%3C/svg%3E"),
+        linear-gradient(90deg, transparent, rgba(67,137,245,.12), transparent);
+
+    animation-delay: -3.5s;
+}
+
+/* MOVIMENTO DAS SETAS */
+@keyframes fluxoSetas {
+    from {
+        background-position: 0 0, 0 0;
+    }
+
+    to {
+        background-position: 0 -96px, 0 0;
+    }
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 1150px) {
+    .container::before,
+    .container::after {
+        display: none;
+    }
+}

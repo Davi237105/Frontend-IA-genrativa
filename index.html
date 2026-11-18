@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUIZ IA GENERATIVA</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <main class ="container">
+
+        <!--- TELA INICIAL --->
+
+        <section id="tela-inicial">
+            <p class="subtitulo">OQUE A IA PODE FAZER?</p>
+
+            <h1>IA GENERATIVA</h1>
+
+            <p>
+                Você sabe até onde você
+                até onde pode confiar na 
+                inteligência artificial?
+            </p>
+
+            <button id="botao-começar">COMEÇAR</button>
+        </section>
+
+        <!--- INTRODUÇÃO --->
+        <section id="introdução" hidden>
+        <p class="subtitulo">ANTES DE COMEÇAR</p>
+
+        <h2>OQUE É UMA IA GENERATIVA?</h2>
+
+             <p>A inteligência artificial generativa é uma
+                tecnologia capaz de criar novos conteúdos,
+                como textos, imagens, músicas e códigos,
+                a partir de padrões aprendidos em grandes
+                conjuntos de dados. 
+            </p>
+
+        <h3>QUAIS SÃO SEUS BENEFICIOS?</h3>
+
+            <p>Ela pode ajudar nos estudos, no trabalho
+                e na criatividade, facilitando tarefas
+                e oferecendo novas ideias.</p>
+
+        <h3>ELA É 100% CONFIAVEL?</h3>
+
+             <p>Não! A IA pode apresentar informações
+                falsas, reproduzir preconceitos, gerar
+                desinformação e colocar a privacidade
+                em risco.</p>
+
+            <p>Por isso, é importante verificar as
+                respostas, proteger seus dados pessoais
+                e utilizar essa tecnologia com responsabilidade.
+            </p>
+        <button id="começar-quiz">ITS OK, VAMOS PRO QUIZ</button>
+    </section>
+
+    
+        <!-- TELA DO QUIZ -->
+        <section id="tela-quiz" hidden>
+
+            <p class="subtitulo">VAMOS PARA O QUIZ</p>
+
+            <p id="progresso">PERGUNTA 1 DE 15</p>
+
+            <h2 id="pergunta">
+                Pergunta aparecerá aqui.
+            </h2>
+
+            <div id="alternativas">
+
+                <!-- O JavaScript vai criar as alternativas aqui -->
+
+            </div>
+
+            <p id="feedback" hidden></p>
+
+            <button id="botao-proxima" hidden>
+                NEXT
+            </button>
+
+        </section>
+
+        <!-- TELA DE RESULTADO -->
+        <section id="tela-resultado" hidden>
+
+            <p class="subtitulo">RESULTADO</p>
+
+            <h2>COMO VOCÊ VOCÊ FOI?</h2>
+
+            <p id="pontuacao">
+                Você acertou 0 de 15 perguntas!
+            </p>
+
+            <p id="mensagem-final">
+                Seu resultado aparecerá aqui.
+            </p>
+
+            <button id="botao-reiniciar">
+                JOGAR NOVAMENTE
+            </button>
+
+        </section>
+
+    </main>
+    
+</body>
+</html>
